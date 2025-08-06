@@ -1,0 +1,13 @@
+<idea-plugin>
+    <id>com.plug.YourCodePlugin</id>
+    <name>YourCodePlugin</name>
+    <version>1.0</version>
+    <vendor email="asd">asd</vendor>
+
+    <depends>com.intellij.modules.platform</depends>
+
+    <!-- Classic StartupActivity lives here -->
+    <extensions defaultExtensionNs="com.intellij">
+        <postStartupActivity implementation="com.plug.yourcodeplugin.MyStartUpActivity"/>
+    </extensions>
+</idea-plugin>
