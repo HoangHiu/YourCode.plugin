@@ -6,8 +6,7 @@
 
     <depends>com.intellij.modules.platform</depends>
 
-    <!-- Classic StartupActivity lives here -->
     <extensions defaultExtensionNs="com.intellij">
-        <postStartupActivity implementation="com.plug.yourcodeplugin.MyStartUpActivity"/>
+        <startupActivity implementation="com.plug.yourcodeplugin.MyStartUpActivity"/>
     </extensions>
 </idea-plugin>
