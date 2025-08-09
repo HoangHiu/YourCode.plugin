@@ -20,8 +20,11 @@ dependencies {
         create("IC", "2025.1")
         testFramework(org.jetbrains.intellij.platform.gradle.TestFrameworkType.Platform)
 
-        // Add necessary plugin dependencies for compilation here, example:
-        // bundledPlugin("com.intellij.java")
+        compileOnly("org.projectlombok:lombok:1.18.38")
+        annotationProcessor("org.projectlombok:lombok:1.18.38")
+
+        testCompileOnly("org.projectlombok:lombok:1.18.38")
+        testAnnotationProcessor("org.projectlombok:lombok:1.18.38")
     }
 }
 
