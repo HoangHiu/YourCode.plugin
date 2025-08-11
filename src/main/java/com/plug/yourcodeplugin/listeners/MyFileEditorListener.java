@@ -1,4 +1,4 @@
-package com.plug.yourcodeplugin;
+package com.plug.yourcodeplugin.listeners;
 
 import com.intellij.openapi.fileEditor.FileEditorManagerListener;
 
