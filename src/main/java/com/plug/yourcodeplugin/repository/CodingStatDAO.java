@@ -3,7 +3,10 @@ package com.plug.yourcodeplugin.repository;
 import com.plug.yourcodeplugin.models.DailyStats;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
+import jakarta.persistence.NoResultException;
 import jakarta.persistence.Persistence;
+
+import java.time.LocalDate;
 
 public class CodingStatDAO {
     private static volatile EntityManagerFactory emf;
@@ -47,6 +50,30 @@ public class CodingStatDAO {
             em.close();
         }
     }
+
+    public void update(DailyStats stats) {
+        EntityManager em = getEmf().createEntityManager();
+        try {
+            em.getTransaction().begin();
+            em.merge(stats);
+            em.getTransaction().commit();
+        } finally {
+            em.close();
+        }
+    }
+
+    public DailyStats findByStatDate(LocalDate date) {
+        EntityManagerFactory emfLocal = getEmf();
+        try (EntityManager em = emfLocal.createEntityManager()) {
+            return em.createQuery(
+                            "SELECT d FROM DailyStats d WHERE d.date = :date", DailyStats.class)
+                    .setParameter("date", date)
+                    .getSingleResult();
+        } catch (NoResultException e) {
+            return null;
+        }
+    }
+
 
     public void close() {
         if (emf != null && emf.isOpen()) emf.close();

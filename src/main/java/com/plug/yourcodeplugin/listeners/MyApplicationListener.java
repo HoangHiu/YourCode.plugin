@@ -9,6 +9,7 @@ import java.io.File;
 import java.io.FileWriter;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.time.LocalDate;
 
 public class MyApplicationListener implements AppLifecycleListener {
     private final long appStartTime;
@@ -37,7 +38,18 @@ public class MyApplicationListener implements AppLifecycleListener {
         );
 
         try {
-            new CodingStatDAO().save(entity);
+            CodingStatDAO dao = new CodingStatDAO();
+            DailyStats stats = dao.findByStatDate(LocalDate.now());
+            if(stats != null){
+                stats.setLinesAdded(stats.linesAdded + entity.linesAdded);
+                stats.setLinesRemoved(stats.linesRemoved + entity.linesRemoved);
+                stats.setFilesOpened(stats.filesOpened + entity.filesOpened);
+                stats.setFilesClosed(stats.filesClosed + entity.filesClosed);
+                stats.setCodingTimeMs(stats.codingTimeMs + entity.codingTimeMs);
+                dao.update(stats);
+            }else {
+                dao.save(entity);
+            }
             System.out.println("Saved stats to DB.");
         } catch (Exception ex) {
             ex.printStackTrace();
