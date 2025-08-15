@@ -1,10 +1,30 @@
 <idea-plugin>
     <id>com.plug.YourCodePlugin</id>
+
     <name>YourCodePlugin</name>
-    <version>1.0</version>
-    <vendor email="asd">asd</vendor>
+
+    <version>1.0.0</version>
+
+    <vendor email="hoangdinhhieu2105.work@gmail.com" url="https://github.com/HoangHiu/YourCode.plugin">asd</vendor>
 
     <depends>com.intellij.modules.platform</depends>
+
+    <idea-version since-build="241.0" until-build="242.*" />
+
+    <description><![CDATA[
+        <p>YourCodePlugin is a tool to track and manage your coding statistics directly inside IntelliJ IDEA.</p>
+        <ul>
+            <li>Tracks lines of code added/removed</li>
+            <li>Monitors time spent coding</li>
+            <li>Shows daily coding progress</li>
+        </ul>
+    ]]></description>
+
+    <change-notes><![CDATA[
+        <ul>
+            <li>Initial beta release</li>
+        </ul>
+    ]]></change-notes>
 
     <extensions defaultExtensionNs="com.intellij">
         <postStartupActivity implementation="com.plug.yourcodeplugin.MyStartUpActivity"/>
