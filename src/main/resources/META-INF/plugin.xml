@@ -1,7 +1,7 @@
 <idea-plugin>
     <id>com.plug.YourCodePlugin</id>
 
-    <name>YourCodePlugin</name>
+    <name>YourDailyCode</name>
 
     <version>1.0.0</version>
 
@@ -12,7 +12,7 @@
     <idea-version since-build="241.0" until-build="242.*" />
 
     <description><![CDATA[
-        <p>YourCodePlugin is a tool to track and manage your coding statistics directly inside IntelliJ IDEA.</p>
+        <p><b>YourDailyCode</b> helps you track and manage your coding statistics directly inside IntelliJ IDEA.</p>
         <ul>
             <li>Tracks lines of code added/removed</li>
             <li>Monitors time spent coding</li>
