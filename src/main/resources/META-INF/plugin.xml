@@ -3,7 +3,7 @@
 
     <name>YourDailyCode</name>
 
-    <version>1.0.0</version>
+    <version>1.0.1</version>
 
     <vendor email="hoangdinhhieu2105.work@gmail.com" url="https://github.com/HoangHiu/YourCode.plugin">asd</vendor>
 
@@ -21,9 +21,9 @@
     ]]></description>
 
     <change-notes><![CDATA[
-        <ul>
-            <li>Initial beta release</li>
-        </ul>
+    <ul>
+        <li>Remove icon</li>
+    </ul>
     ]]></change-notes>
 
     <extensions defaultExtensionNs="com.intellij">
